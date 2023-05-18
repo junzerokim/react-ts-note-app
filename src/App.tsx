@@ -29,7 +29,9 @@ export type Tag = {
 };
 
 function App() {
-  const [notes, setNotes] = useLocalStorage<RawNote[]>;
+  const [notes, setNotes] = useLocalStorage<RawNote[]>('NOTES', []);
+  const [tags, setTags] = useLocalStorage<Tag[]>('TAGS', []);
+
   return (
     <Container className="my-4">
       <Routes>
