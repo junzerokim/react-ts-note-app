@@ -10,7 +10,7 @@ export type Note = {
 
 export type RawNote = {
   id: string;
-};
+} & RawNoteData;
 
 export type RawNoteData = {
   title: string;
@@ -37,7 +37,7 @@ function App() {
     return notes.map((note) => {
       return { ...note, tags: tags.filter((tag) => note.tagIds.includes(tag.id)) };
     });
-  });
+  }, [notes, tags]);
 
   return (
     <Container className="my-4">
