@@ -39,6 +39,12 @@ function App() {
     });
   }, [notes, tags]);
 
+  function onCreateNote({ tags, ...data }: NoteData) {
+    setNotes((prevNotes) => {
+      return [...prevNotes, data];
+    });
+  }
+
   return (
     <Container className="my-4">
       <Routes>
