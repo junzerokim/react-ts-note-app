@@ -42,7 +42,7 @@ function App() {
 
   function onCreateNote({ tags, ...data }: NoteData) {
     setNotes((prevNotes) => {
-      return [...prevNotes, data, id: uuidV4, tagIds: tags];
+      return [...prevNotes, data, id: uuidV4, tagIds: tags.map(tag => tag.id)];
     });
   }
 
