@@ -40,6 +40,8 @@ export function NoteForm({ onSubmit }: NoteFormProps) {
               <CrreatableReactSelect
                 onCreateOption={(label) => {
                   const newTag = { id: uuidV4(), label };
+                  onAddTag(newTag);
+                  setSelectedTags((prev) => [...prev, newTag]);
                 }}
                 value={selectedTags.map((tag) => {
                   return { label: tag.label, value: tag.id };
