@@ -46,6 +46,10 @@ function App() {
     });
   }
 
+  function addTag(tag: Tag) {
+    setTags(prev => [...prev, tag])
+  }
+
   return (
     <Container className="my-4">
       <Routes>
