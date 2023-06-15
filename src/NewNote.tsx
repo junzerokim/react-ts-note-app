@@ -3,6 +3,7 @@ import { NoteForm } from './NoteForm';
 
 type NewNoteProps = {
   onSubmit: (data: NoteData) => void;
+  onAddTag: (tag: Tag) => void;
 };
 
 export function NewNote({ onSubmit }: NewNoteProps) {
